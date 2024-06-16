@@ -1,0 +1,3 @@
+/tmp/Schedule-sifter/cmake-build-debug/CMakeFiles/Schedule_sifter.dir
+/tmp/Schedule-sifter/cmake-build-debug/CMakeFiles/edit_cache.dir
+/tmp/Schedule-sifter/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Schedule_sifter"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/tmp/Schedule-sifter/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/tmp/Schedule-sifter/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/tmp/Schedule-sifter/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/tmp/Schedule-sifter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/tmp/Schedule-sifter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Schedule_sifter">
+				<Option output="/tmp/Schedule-sifter/cmake-build-debug/Schedule_sifter" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/Schedule-sifter/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/tmp/Schedule-sifter/cmake-build-debug/Makefile&quot;  VERBOSE=1 Schedule_sifter"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/tmp/Schedule-sifter/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/tmp/Schedule-sifter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/tmp/Schedule-sifter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Schedule_sifter/fast">
+				<Option output="/tmp/Schedule-sifter/cmake-build-debug/Schedule_sifter" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/Schedule-sifter/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/aarch64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/tmp/Schedule-sifter/cmake-build-debug/Makefile&quot;  VERBOSE=1 Schedule_sifter/fast"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/tmp/Schedule-sifter/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/tmp/Schedule-sifter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/tmp/Schedule-sifter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/tmp/Schedule-sifter/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/tmp/Schedule-sifter/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/tmp/Schedule-sifter/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/tmp/Schedule-sifter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/tmp/Schedule-sifter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/tmp/Schedule-sifter/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/tmp/Schedule-sifter/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/tmp/Schedule-sifter/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/tmp/Schedule-sifter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/tmp/Schedule-sifter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/tmp/Schedule-sifter/comparable.cpp">
+			<Option target="Schedule_sifter"/>
+		</Unit>
+		<Unit filename="/tmp/Schedule-sifter/comparable.h">
+			<Option target="Schedule_sifter"/>
+		</Unit>
+		<Unit filename="/tmp/Schedule-sifter/list.cpp">
+			<Option target="Schedule_sifter"/>
+		</Unit>
+		<Unit filename="/tmp/Schedule-sifter/list.h">
+			<Option target="Schedule_sifter"/>
+		</Unit>
+		<Unit filename="/tmp/Schedule-sifter/main.cpp">
+			<Option target="Schedule_sifter"/>
+		</Unit>
+		<Unit filename="/tmp/Schedule-sifter/object.cpp">
+			<Option target="Schedule_sifter"/>
+		</Unit>
+		<Unit filename="/tmp/Schedule-sifter/object.h">
+			<Option target="Schedule_sifter"/>
+		</Unit>
+		<Unit filename="/tmp/Schedule-sifter/person.cpp">
+			<Option target="Schedule_sifter"/>
+		</Unit>
+		<Unit filename="/tmp/Schedule-sifter/person.h">
+			<Option target="Schedule_sifter"/>
+		</Unit>
+		<Unit filename="/tmp/Schedule-sifter/schedule.cpp">
+			<Option target="Schedule_sifter"/>
+		</Unit>
+		<Unit filename="/tmp/Schedule-sifter/schedule.h">
+			<Option target="Schedule_sifter"/>
+		</Unit>
+		<Unit filename="/tmp/Schedule-sifter/timeInterval.cpp">
+			<Option target="Schedule_sifter"/>
+		</Unit>
+		<Unit filename="/tmp/Schedule-sifter/timeInterval.h">
+			<Option target="Schedule_sifter"/>
+		</Unit>
+		<Unit filename="/tmp/Schedule-sifter/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

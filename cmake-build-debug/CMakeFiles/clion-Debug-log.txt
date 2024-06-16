@@ -1,0 +1,4 @@
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /tmp/Schedule-sifter -B /tmp/Schedule-sifter/cmake-build-debug
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /tmp/Schedule-sifter/cmake-build-debug

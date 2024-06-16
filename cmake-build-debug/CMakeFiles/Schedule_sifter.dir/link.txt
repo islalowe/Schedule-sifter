@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/Schedule_sifter.dir/main.cpp.o CMakeFiles/Schedule_sifter.dir/object.cpp.o CMakeFiles/Schedule_sifter.dir/list.cpp.o CMakeFiles/Schedule_sifter.dir/person.cpp.o CMakeFiles/Schedule_sifter.dir/comparable.cpp.o CMakeFiles/Schedule_sifter.dir/schedule.cpp.o CMakeFiles/Schedule_sifter.dir/timeInterval.cpp.o -o Schedule_sifter 
