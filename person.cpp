@@ -5,22 +5,32 @@
 #include "person.h"
 
 
-
+/**
+ * Constructor
+ */
 Person::Person(const string& personName) {
     _name = personName;
 }
 
+
+/**
+ * Copy Constructor
+ */
 Person::Person(const Person &rhs) {
     _name = rhs._name;
 }
 
+
+/**
+ * Copy Assignment Operator
+ */
 const Person &Person::operator=(const Person &rhs) {
     if (this == &rhs) {
         // Checking for self-assignment
         return *this;
     }
     _name = rhs._name;
-    //fixme use a setter here or make _schedule public
+    //fixme use a setter for _schedule or make _schedule public
     //_schedule = rhs._schedule; // Assuming Schedule class has a proper assignment operator
 
     return *this;
@@ -41,15 +51,15 @@ string Person::ToString() const {
 
 
 bool Person::Equals(const Object& rhs)const {
-
+    return false;
 }
 
 
-Object* Person::Clone()const {
-
-}
+//Object* Person::Clone()const {
+//
+//}
 
 
 int Person::CompareTo(const Comparable* rhs)const {
-
+    return 0;
 }

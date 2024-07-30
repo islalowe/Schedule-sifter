@@ -8,7 +8,7 @@
 
 #include "object.h"
 #include "list.h"
-#include "strstream"
+#include <sstream>
 using std::stringstream;
 
 class Schedule : public List {
