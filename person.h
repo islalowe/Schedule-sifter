@@ -12,11 +12,11 @@
 using std::string;
 
 class Person : public Comparable{
-    char* _name;
-    Schedule schedule;
+    string _name;
+    Schedule _schedule;
 public:
-    Person(const string& name, size_t age);
-    Person(const Person& person);
+    Person(const string& personName);
+    Person(const Person& rhs);
     const Person& operator=(const Person& rhs);
     virtual ~Person();
     virtual string ToString()const;

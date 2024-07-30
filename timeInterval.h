@@ -6,21 +6,22 @@
 #define SCHEDULE_SIFTER_TIMEINTERVAL_H
 
 
-#include "comparable.h".h"
+#include "comparable.h"
 
 class timeInterval : public Comparable {
-    bool busy;
-    int startTime;
-    int endTime;
+    bool _busy;
+    int _startTime;      // This is in hours (0-23)
+    int _endTime;        // This is in hours (0-23)
 public:
     timeInterval();
-    virtual string ToString()const;
+    timeInterval(int start, int end);
+   // virtual string ToString()const;
     int GetStartTIme()const;
     int GetEndTIme()const;
     void SetStartTime(int);
     void SetEndTime(int);
     virtual bool Overlaps(const Object& rhs)const;
-    virtual Object* Clone()const;
+    //virtual Object* Clone()const;
     virtual int CompareTo(const Comparable* rhs)const;
 };
 

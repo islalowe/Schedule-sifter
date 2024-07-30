@@ -115,6 +115,9 @@
 		<Unit filename="/tmp/Schedule-sifter/schedule.h">
 			<Option target="Schedule_sifter"/>
 		</Unit>
+		<Unit filename="/tmp/Schedule-sifter/test.cpp">
+			<Option target="Schedule_sifter"/>
+		</Unit>
 		<Unit filename="/tmp/Schedule-sifter/timeInterval.cpp">
 			<Option target="Schedule_sifter"/>
 		</Unit>
