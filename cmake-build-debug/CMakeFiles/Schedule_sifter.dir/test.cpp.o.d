@@ -146,6 +146,5 @@ CMakeFiles/Schedule_sifter.dir/test.cpp.o: /tmp/Schedule-sifter/test.cpp \
  /usr/include/c++/11/bits/istream.tcc /tmp/Schedule-sifter/person.h \
  /tmp/Schedule-sifter/comparable.h /tmp/Schedule-sifter/object.h \
  /tmp/Schedule-sifter/schedule.h /tmp/Schedule-sifter/list.h \
- /usr/include/c++/11/backward/strstream \
- /usr/include/c++/11/backward/backward_warning.h \
+ /usr/include/c++/11/sstream /usr/include/c++/11/bits/sstream.tcc \
  /tmp/Schedule-sifter/timeInterval.h

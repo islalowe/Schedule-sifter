@@ -1,6 +1,9 @@
 //
 // Created by Isla Lowe on 6/16/24.
 //
+/**
+ * The schedule is 7 days of time intervals that represent hours where a person is busy each day of the week.
+ */
 
 #include "schedule.h"
 
@@ -18,16 +21,17 @@ Schedule::Schedule() {
  * Copy Constructor
  */
  //fixme
-Schedule::Schedule(const Schedule &other) {
-    _head = nullptr;
-    _tail = nullptr;
-    Node* current = other._head;
-    while (current != nullptr) {
-        Object* newData = current->data->Clone();
-        this->Insert(newData, this->IndexOf(_tail) + 1);
-        current = current->next;
-    }
-}
+//Schedule::Schedule(const Schedule &other) {
+//    _head = nullptr;
+//    _tail = nullptr;
+//    Node* neo = other._head;
+//    while (neo != nullptr) {
+//        Object* newData = neo->data->Clone();
+//        //fixme
+//        this->Insert(newData, this->IndexOf(_tail) + 1);
+//        neo = neo->next;
+//    }
+//}
 
 
 /**

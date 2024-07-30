@@ -21,6 +21,8 @@ public:
      *         if this < rhs returns a negative number.
      *         if this > rhs returns a positive number.
      */
+     //todo how can this be bigger or smaller than rhs? is the time being compared?
+     //
     virtual int CompareTo(const Comparable* rhs)const = 0;
     virtual string ToString()const;
 };

@@ -904,8 +904,8 @@ CMakeFiles/Schedule_sifter.dir/person.cpp.o: ../person.cpp \
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
-  /usr/include/c++/11/backward/strstream \
-  /usr/include/c++/11/backward/backward_warning.h
+  /usr/include/c++/11/sstream \
+  /usr/include/c++/11/bits/sstream.tcc
 
 CMakeFiles/Schedule_sifter.dir/schedule.cpp.o: ../schedule.cpp \
   /usr/include/stdc-predef.h \
@@ -1087,8 +1087,8 @@ CMakeFiles/Schedule_sifter.dir/schedule.cpp.o: ../schedule.cpp \
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
-  /usr/include/c++/11/backward/strstream \
-  /usr/include/c++/11/backward/backward_warning.h
+  /usr/include/c++/11/sstream \
+  /usr/include/c++/11/bits/sstream.tcc
 
 CMakeFiles/Schedule_sifter.dir/test.cpp.o: ../test.cpp \
   /usr/include/stdc-predef.h \
@@ -1272,8 +1272,8 @@ CMakeFiles/Schedule_sifter.dir/test.cpp.o: ../test.cpp \
   ../object.h \
   ../schedule.h \
   ../list.h \
-  /usr/include/c++/11/backward/strstream \
-  /usr/include/c++/11/backward/backward_warning.h \
+  /usr/include/c++/11/sstream \
+  /usr/include/c++/11/bits/sstream.tcc \
   ../timeInterval.h
 
 CMakeFiles/Schedule_sifter.dir/timeInterval.cpp.o: ../timeInterval.cpp \
@@ -1431,8 +1431,6 @@ CMakeFiles/Schedule_sifter.dir/timeInterval.cpp.o: ../timeInterval.cpp \
 
 ../schedule.cpp:
 
-/usr/include/c++/11/backward/backward_warning.h:
-
 ../object.cpp:
 
 ../main.cpp:
@@ -1490,8 +1488,6 @@ CMakeFiles/Schedule_sifter.dir/timeInterval.cpp.o: ../timeInterval.cpp \
 /usr/include/errno.h:
 
 /usr/include/aarch64-linux-gnu/bits/stdio_lim.h:
-
-/usr/include/c++/11/backward/strstream:
 
 ../person.cpp:
 
