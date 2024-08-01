@@ -18,4 +18,8 @@ add_executable(Schedule_sifter main.cpp
         timeInterval.cpp
         timeInterval.h
         test.cpp
+        DoublyLinkedList.h
+        DoublyLinkedList.h
+        DoublyLinkedList.h
+        DoublyLinkedList.cpp
 )

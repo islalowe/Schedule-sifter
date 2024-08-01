@@ -28,7 +28,6 @@ public:
 
     size_t Size()const;
     bool IsEmpty()const;
-
 };
 
 

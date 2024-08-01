@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Schedule_sifter.dir/DoublyLinkedList.cpp.o"
+  "CMakeFiles/Schedule_sifter.dir/DoublyLinkedList.cpp.o.d"
   "CMakeFiles/Schedule_sifter.dir/comparable.cpp.o"
   "CMakeFiles/Schedule_sifter.dir/comparable.cpp.o.d"
   "CMakeFiles/Schedule_sifter.dir/list.cpp.o"

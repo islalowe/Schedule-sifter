@@ -81,12 +81,12 @@ clean: CMakeFiles/Schedule_sifter.dir/clean
 CMakeFiles/Schedule_sifter.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Schedule_sifter.dir/build.make CMakeFiles/Schedule_sifter.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Schedule_sifter.dir/build.make CMakeFiles/Schedule_sifter.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/tmp/Schedule-sifter/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target Schedule_sifter"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/tmp/Schedule-sifter/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target Schedule_sifter"
 .PHONY : CMakeFiles/Schedule_sifter.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Schedule_sifter.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /tmp/Schedule-sifter/cmake-build-debug/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /tmp/Schedule-sifter/cmake-build-debug/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Schedule_sifter.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /tmp/Schedule-sifter/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/Schedule_sifter.dir/rule

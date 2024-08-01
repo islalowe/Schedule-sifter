@@ -129,6 +129,30 @@ Schedule_sifter/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Schedule_sifter.dir/build.make CMakeFiles/Schedule_sifter.dir/build
 .PHONY : Schedule_sifter/fast
 
+DoublyLinkedList.o: DoublyLinkedList.cpp.o
+.PHONY : DoublyLinkedList.o
+
+# target to build an object file
+DoublyLinkedList.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Schedule_sifter.dir/build.make CMakeFiles/Schedule_sifter.dir/DoublyLinkedList.cpp.o
+.PHONY : DoublyLinkedList.cpp.o
+
+DoublyLinkedList.i: DoublyLinkedList.cpp.i
+.PHONY : DoublyLinkedList.i
+
+# target to preprocess a source file
+DoublyLinkedList.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Schedule_sifter.dir/build.make CMakeFiles/Schedule_sifter.dir/DoublyLinkedList.cpp.i
+.PHONY : DoublyLinkedList.cpp.i
+
+DoublyLinkedList.s: DoublyLinkedList.cpp.s
+.PHONY : DoublyLinkedList.s
+
+# target to generate assembly for a file
+DoublyLinkedList.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Schedule_sifter.dir/build.make CMakeFiles/Schedule_sifter.dir/DoublyLinkedList.cpp.s
+.PHONY : DoublyLinkedList.cpp.s
+
 comparable.o: comparable.cpp.o
 .PHONY : comparable.o
 
@@ -330,6 +354,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Schedule_sifter"
+	@echo "... DoublyLinkedList.o"
+	@echo "... DoublyLinkedList.i"
+	@echo "... DoublyLinkedList.s"
 	@echo "... comparable.o"
 	@echo "... comparable.i"
 	@echo "... comparable.s"

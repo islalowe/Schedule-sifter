@@ -2,18 +2,19 @@
 // Created by Isla Lowe on 6/16/24.
 //
 /**
- * The schedule is 7 days of time intervals that represent hours where a person is busy each day of the week.
+ * The Schedule class manages an array of 7 days of DoublyLinkedList Objects, one for each day of the week.
+ * Each DoublyLinkedList contains a number of TimeIntervals representing the hours worked by a person on that day.
  */
 
 #include "schedule.h"
 
-
 /**
  * Default Constructor
+ * Parent class initializes size to 7
  */
+ //todo - make an array
 Schedule::Schedule() {
-    _tail = nullptr;
-    _head = nullptr;
+
 }
 
 
@@ -22,15 +23,6 @@ Schedule::Schedule() {
  */
  //fixme
 //Schedule::Schedule(const Schedule &other) {
-//    _head = nullptr;
-//    _tail = nullptr;
-//    Node* neo = other._head;
-//    while (neo != nullptr) {
-//        Object* newData = neo->data->Clone();
-//        //fixme
-//        this->Insert(newData, this->IndexOf(_tail) + 1);
-//        neo = neo->next;
-//    }
 //}
 
 
@@ -45,15 +37,27 @@ Schedule &Schedule::operator=(const Schedule &rhs) {
 /**
  * Destructor
  */
- //fixme
 Schedule::~Schedule() {
-    this->Clear();
 }
 
 
-//todo
-bool Schedule::Insert(Object *element, size_t position) {
-    return false;
+/**
+ * Inserts a TimeInterval into a given position.
+ * This operation has the following steps:
+ * 1. Check if the position is valid
+ * 2. Creates a new node and links it to the element
+ * 3. If the list is empty, the head and tail point to the new node
+ * 4. If the list is not empty but want to insert in position zero
+ *    it links the list and updates the head and tail
+ * 5. If the position is not zero and the list is not empty, it tra-
+ *    verses the list up the element that precedes the element to be
+ *    inserted. Links the new node to that position
+ * @param element what the client wants to insert into the list
+ * @param day the position where the element is to be inserted
+ * @return true if it was possible to insert, false otherwise. It will not be able
+ * to insert if the position is invalid.
+ */
+bool Insert(TimeInterval* interval, int day) {
 }
 
 //todo
@@ -74,15 +78,6 @@ Object* Schedule::Get(size_t position) const {
 //todo
 string Schedule::ToString()const {
     stringstream scheduleString;
-//    for (const auto& interval : interval) {
-//        scheduleString << "Start: " << interval->GetStartTime() << ", End: " << interval->GetEndTime() << "\n";
-//    }
-// or maybe
-//    while (current != nullptr) {
-//        // Assuming Object has a ToString() method
-//        scheduleString << current->data->ToString() << "\n";
-//        current = current->next;
-//    }
     return scheduleString.str();
 
 }
@@ -92,12 +87,5 @@ string Schedule::ToString()const {
  * This method returns nothing but deletes all of the nodes and helps the destructor method.
  */
 void Schedule::Clear() {
-    Node* current = _head;
-    while (current != nullptr) {
-        Node* nextNode = current->next;
-        delete current->data;
-        delete current;
-        current = nextNode;
-    }
-    _head = _tail = nullptr;
+
 }

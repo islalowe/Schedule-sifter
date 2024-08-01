@@ -8,19 +8,19 @@
 
 #include "comparable.h"
 
-class timeInterval : public Comparable {
+class TimeInterval : public Comparable {
     bool _busy;
     int _startTime;      // This is in hours (0-23)
     int _endTime;        // This is in hours (0-23)
 public:
-    timeInterval();
-    timeInterval(int start, int end);
+    TimeInterval();
+    TimeInterval(int start, int end);
     virtual string ToString()const;
     int GetStartTIme()const;
     int GetEndTIme()const;
     void SetStartTime(int);
     void SetEndTime(int);
-    virtual bool Overlaps(const timeInterval& rhs)const;
+    virtual bool Overlaps(const TimeInterval& rhs)const;
     //virtual Object* Clone()const;
     virtual int CompareTo(const Comparable* rhs)const;
     int Duration() const;

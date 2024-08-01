@@ -1,6 +1,9 @@
 //
 // Created by Isla Lowe on 6/16/24.
 //
+/**
+ * The Person Class contains a Schedule object as a member variable.
+ **/
 
 #include "person.h"
 
@@ -60,6 +63,22 @@ bool Person::Equals(const Object& rhs)const {
 //}
 
 
-int Person::CompareTo(const Comparable* rhs)const {
-    return 0;
+/**
+ * Returns a string representation of all of the days off in the given week
+ * that the current object and rhs have in common.
+ * @param rhs: The comparable Person whose Schedule will be compared against that of the current object
+ **/
+string Person::CompareFreeDays(const Comparable* rhs)const {
+    return "";
+}
+
+/**
+ * Returns a string representation of all of the days off in the given week
+ * in which the current object and rhs Person both have coinciding free time in the amount specified in the parameter.
+ * @param rhs: The comparable Person whose Schedule will be compared against that of the current object
+ * @param desiredFreeTimeAmt: an int value representing the size of coinciding time intervals, in number of hours,
+ * that will be searched for in both Persons schedules.
+ **/
+string Person::CompareForSharedFreeTime(const Comparable* rhs, int desiredFreeTimeAmt)const {
+    return "";
 }

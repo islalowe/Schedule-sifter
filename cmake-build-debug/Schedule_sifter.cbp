@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/tmp/Schedule-sifter/DoublyLinkedList.cpp">
+			<Option target="Schedule_sifter"/>
+		</Unit>
+		<Unit filename="/tmp/Schedule-sifter/DoublyLinkedList.h">
+			<Option target="Schedule_sifter"/>
+		</Unit>
 		<Unit filename="/tmp/Schedule-sifter/comparable.cpp">
 			<Option target="Schedule_sifter"/>
 		</Unit>

@@ -4,10 +4,11 @@
 
 #include "timeInterval.h"
 
+
 /**
  * Default Constructor
  **/
-timeInterval::timeInterval() {
+TimeInterval::TimeInterval() {
     _busy = false;
     _startTime = 0;
     _endTime = 0;
@@ -17,7 +18,7 @@ timeInterval::timeInterval() {
 /**
  * Constructor with parameters
  **/
-timeInterval::timeInterval(int start, int end) {
+TimeInterval::TimeInterval(int start, int end) {
     _busy = false;
     _startTime = start;
     _endTime = end;
@@ -27,40 +28,44 @@ timeInterval::timeInterval(int start, int end) {
 /**
  * Returns a string representation of the time interval
  **/
-
-string timeInterval::ToString()const {
-    return "time interval";
+string TimeInterval::ToString()const {
+    stringstream ssTime;
+    ssTime << "Work Start: " << _startTime << ", Work End" << _endTime << std::endl;
+    return ssTime.str();
 }
-
 
 
 /**
  * Getter method for the startTime data member
  **/
-int timeInterval::GetStartTIme() const {
+int TimeInterval::GetStartTIme() const {
     return _startTime;
 }
+
 
 /**
  * Getter method for the endTime data member
  **/
-int timeInterval::GetEndTIme() const {
+int TimeInterval::GetEndTIme() const {
     return _endTime;
 }
+
 
 /**
  * Setter method for the startTime data member
  **/
-void timeInterval::SetStartTime(int time) {
+void TimeInterval::SetStartTime(int time) {
     _startTime = time;
 }
+
 
 /**
  * Setter method for the endTime data member
  **/
-void timeInterval::SetEndTime(int time) {
+void TimeInterval::SetEndTime(int time) {
     _endTime = time;
 }
+
 
 /**
  * Returns true is any of the timeInterval data member of the current object has times in common with
@@ -70,22 +75,23 @@ void timeInterval::SetEndTime(int time) {
  //fixme: a person has one schedule but that has many time intervals.
  // should look through all 7 or check one day?
  //look through a week of 7 time intervals
-bool timeInterval::Overlaps(const timeInterval &rhs) const {
+bool TimeInterval::Overlaps(const TimeInterval &rhs) const {
     if ((_startTime < rhs._endTime) && (_endTime > rhs._startTime)) {
         return true;
     }
     return false;
 }
 
+
 /**
  *
  **/
  //fixme should this return an int?
-int timeInterval::CompareTo(const Comparable *rhs) const {
+int TimeInterval::CompareTo(const Comparable *rhs) const {
     return 0;
 }
 
 
-int timeInterval::Duration() const {
+int TimeInterval::Duration() const {
     return _endTime - _startTime;
 }

@@ -22,7 +22,8 @@ public:
     virtual string ToString()const;
     virtual bool Equals(const Object& rhs)const;
     virtual Object* Clone()const;
-    virtual int CompareTo(const Comparable* rhs)const;
+    virtual string CompareFreeDays(const Comparable* rhs)const;
+    virtual string CompareForSharedFreeTime(const Comparable* rhs, int desiredFreeTimeAmt)const;
 };
 
 

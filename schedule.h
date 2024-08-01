@@ -7,30 +7,36 @@
 #define SCHEDULE_SIFTER_SCHEDULE_H
 
 #include "object.h"
-#include "list.h"
 #include <sstream>
 using std::stringstream;
 
-class Schedule : public List {
+class Schedule : public Object {
 protected:
     struct Node{
-        Object* data;           //this is the time
+        TimeInterval* data;           //this is the time
         Node* next;
         Node* previous;
     };
     Node* _head;
     Node* _tail;
-    Schedule(const Schedule& other);
+    Node* head[7];                   // 0: Sunday, 1: Monday, ..., 6: Saturday
+    Node* tail[7];
+
     Schedule& operator=(const Schedule& rhs);
 public:
     Schedule();
     virtual ~Schedule();
-    virtual bool Insert(Object* element, size_t position);
+    bool Insert(TimeInterval* interval, int day);
     virtual int IndexOf(const Object* element)const;
     virtual Object* Remove(size_t position);
     virtual Object* Get(size_t position)const;
     virtual string ToString()const;
-    virtual void Clear();
+    void Clear(int day);
+
+//    vector<TimeInterval> FindCommonFreeTime(const Schedule& other, int minDuration) const;
+//    bool HasFullFreeDay(const Schedule& other) const;
+
+    Schedule(const Schedule& other);
 };
 
 
