@@ -11,24 +11,11 @@
 using std::stringstream;
 
 class Schedule : public Object {
-protected:
-    struct Node{
-        TimeInterval* data;           //this is the time
-        Node* next;
-        Node* previous;
-    };
-    Node* _head;
-    Node* _tail;
-    Node* head[7];                   // 0: Sunday, 1: Monday, ..., 6: Saturday
-    Node* tail[7];
 
-    Schedule& operator=(const Schedule& rhs);
+
 public:
     Schedule();
     virtual ~Schedule();
-    bool Insert(TimeInterval* interval, int day);
-    virtual int IndexOf(const Object* element)const;
-    virtual Object* Remove(size_t position);
     virtual Object* Get(size_t position)const;
     virtual string ToString()const;
     void Clear(int day);

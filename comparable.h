@@ -12,19 +12,26 @@ public:
 
 
     /**
-     * This method compares two Comparable objects. It works like
-     * strcmp or the method string::compare
+     * This method compares two Comparable objects.
      * This method is virtual pure, it must be implemented by Comparable's
      * derived classes.
-     * @param rhs The object that this is being compared to
-     * @return if this is equal to rhs it returns 0.
-     *         if this < rhs returns a negative number.
-     *         if this > rhs returns a positive number.
+     *  @param rhs: The comparable Person whose Schedule will be compared against that of the current object
+     * @return a string representation of all of the days off in the given week in which the current object
+     * and rhs Person both have coinciding free time.
      */
-     //todo how can this be bigger or smaller than rhs? is the time being compared?
-     //
-    virtual int CompareTo(const Comparable* rhs)const = 0;
-    virtual string ToString()const;
+     virtual string CompareFreeDays(const Comparable* rhs)const;
+
+
+    /**
+    * This method compares two Comparable objects.
+    * This method is virtual pure, it must be implemented by Comparable's
+    * derived classes.
+    *  @param rhs: The comparable Person whose Schedule will be compared against that of the current object
+    * @return a string representation of all of the days off in the given week in which the current object
+    * and rhs Person both have coinciding free time in the amount specified in the parameter.
+    */
+     virtual string CompareForSharedFreeTime(const Comparable* rhs, int desiredFreeTimeAmt)const;
+     virtual string ToString()const;
 };
 
 
