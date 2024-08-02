@@ -365,7 +365,8 @@ CMakeFiles/Schedule_sifter.dir/comparable.cpp.o: ../comparable.cpp \
   /usr/include/c++/11/ostream \
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/bits/istream.tcc \
-  /usr/include/c++/11/bits/sstream.tcc
+  /usr/include/c++/11/bits/sstream.tcc \
+  /usr/include/c++/11/iostream
 
 CMakeFiles/Schedule_sifter.dir/list.cpp.o: ../list.cpp \
   /usr/include/stdc-predef.h \
@@ -727,7 +728,10 @@ CMakeFiles/Schedule_sifter.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
   /usr/include/c++/11/sstream \
-  /usr/include/c++/11/bits/sstream.tcc
+  /usr/include/c++/11/bits/sstream.tcc \
+  /usr/include/c++/11/cstring \
+  /usr/include/string.h \
+  /usr/include/strings.h
 
 CMakeFiles/Schedule_sifter.dir/object.cpp.o: ../object.cpp \
   /usr/include/stdc-predef.h \
@@ -907,7 +911,8 @@ CMakeFiles/Schedule_sifter.dir/object.cpp.o: ../object.cpp \
   /usr/include/c++/11/ostream \
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/bits/istream.tcc \
-  /usr/include/c++/11/bits/sstream.tcc
+  /usr/include/c++/11/bits/sstream.tcc \
+  /usr/include/c++/11/iostream
 
 CMakeFiles/Schedule_sifter.dir/person.cpp.o: ../person.cpp \
   /usr/include/stdc-predef.h \
@@ -1090,10 +1095,10 @@ CMakeFiles/Schedule_sifter.dir/person.cpp.o: ../person.cpp \
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/bits/istream.tcc \
   /usr/include/c++/11/bits/sstream.tcc \
+  /usr/include/c++/11/iostream \
   ../schedule.h \
   ../doublyLinkedList.h \
   ../list.h \
-  /usr/include/c++/11/iostream \
   ../timeInterval.h
 
 CMakeFiles/Schedule_sifter.dir/schedule.cpp.o: ../schedule.cpp \
@@ -1276,9 +1281,9 @@ CMakeFiles/Schedule_sifter.dir/schedule.cpp.o: ../schedule.cpp \
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/bits/istream.tcc \
   /usr/include/c++/11/bits/sstream.tcc \
+  /usr/include/c++/11/iostream \
   ../doublyLinkedList.h \
   ../list.h \
-  /usr/include/c++/11/iostream \
   ../timeInterval.h \
   ../comparable.h
 
@@ -1659,9 +1664,13 @@ CMakeFiles/Schedule_sifter.dir/timeInterval.cpp.o: ../timeInterval.cpp \
 
 ../object.cpp:
 
+/usr/include/string.h:
+
 ../main.cpp:
 
 ../comparable.h:
+
+/usr/include/strings.h:
 
 /usr/include/c++/11/bits/sstream.tcc:
 
@@ -1744,6 +1753,8 @@ CMakeFiles/Schedule_sifter.dir/timeInterval.cpp.o: ../timeInterval.cpp \
 /usr/include/stdint.h:
 
 /usr/include/aarch64-linux-gnu/bits/long-double.h:
+
+/usr/include/c++/11/cstring:
 
 /usr/include/aarch64-linux-gnu/bits/libc-header-start.h:
 

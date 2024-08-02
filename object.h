@@ -8,8 +8,12 @@
 
 #include <string>
 #include <sstream>
+#include <iostream>
 using std::string;
 using std::stringstream;
+using std::cout;
+using std::cin;
+using std::endl;
 
 class Object{
 

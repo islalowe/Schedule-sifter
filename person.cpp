@@ -134,3 +134,11 @@ string Person::CompareFreeDays(const Comparable* rhs)const {
 string Person::CompareForSharedFreeTime(const Comparable* rhs, int desiredFreeTimeAmt)const {
     return "";
 }
+
+
+/**
+ * Builds a schedule for the person.
+ */
+void Person::BuildPersonSchedule() {
+    _schedule.BuildScheduleFromInput();
+}

@@ -31,6 +31,8 @@ public:
     virtual Object* Clone()const;
     virtual string CompareFreeDays(const Comparable* rhs)const;
     virtual string CompareForSharedFreeTime(const Comparable* rhs, int desiredFreeTimeAmt)const;
+
+    void BuildPersonSchedule();
 };
 
 

@@ -53,11 +53,45 @@ string Schedule::ToString() const {
     return scheduleString.str();
 }
 
+
 /**
  * Clears the doubly-linked list of TimeIntervals for a given day
  **/
 void Schedule::Clear(int day) {
     if (day < 7) {
         _week[day]->Clear();
+    }
+}
+
+
+/**
+ * Builds a schedule based on user input.
+ */
+void Schedule::BuildScheduleFromInput() {
+    const string days[7] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+    string day;
+    for (size_t i = 0; i < 7; i++) {
+        day = days[i];
+        char works;
+        cout << "Does this person work on " << day << "? (y/n): ";
+        cin >> works;
+        int startTime, endTime;
+
+        while (works == 'y' || works == 'Y') {
+            TimeInterval interval;
+
+            cout << "What time do they start work on " << day << "? (24hr format: HHMM-HHMM): ";
+            cin >> startTime;
+            cout << "What time do they end work on " << day << "? (24hr format: HHMM-HHMM): ";
+            cin >> endTime;
+            interval.SetStartTime(startTime);
+            interval.SetEndTime(endTime);
+
+            //Insert this time interval into the doubly linked list for the day
+            _week[i]->Insert(&interval, _week[i]->Size());
+
+            cout << "Does this person work again on " << day << "? (y/n): ";
+            cin >> works;
+        }
     }
 }

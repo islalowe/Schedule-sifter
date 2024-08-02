@@ -19,6 +19,7 @@ public:
     virtual DoublyLinkedList* Get(size_t day) const;
     virtual string ToString()const;
     void Clear(int day);
+    void BuildScheduleFromInput();
 
 //    vector<TimeInterval> FindCommonFreeTime(const Schedule& other, int minDuration) const;
 //    bool HasFullFreeDay(const Schedule& other) const;

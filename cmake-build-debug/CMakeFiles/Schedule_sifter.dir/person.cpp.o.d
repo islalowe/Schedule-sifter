@@ -149,6 +149,6 @@ CMakeFiles/Schedule_sifter.dir/person.cpp.o: \
  /usr/include/c++/11/bits/basic_ios.tcc /usr/include/c++/11/ostream \
  /usr/include/c++/11/bits/ostream.tcc \
  /usr/include/c++/11/bits/istream.tcc \
- /usr/include/c++/11/bits/sstream.tcc /tmp/Schedule-sifter/schedule.h \
- /tmp/Schedule-sifter/doublyLinkedList.h /tmp/Schedule-sifter/list.h \
- /usr/include/c++/11/iostream /tmp/Schedule-sifter/timeInterval.h
+ /usr/include/c++/11/bits/sstream.tcc /usr/include/c++/11/iostream \
+ /tmp/Schedule-sifter/schedule.h /tmp/Schedule-sifter/doublyLinkedList.h \
+ /tmp/Schedule-sifter/list.h /tmp/Schedule-sifter/timeInterval.h
