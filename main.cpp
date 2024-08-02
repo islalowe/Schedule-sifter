@@ -6,6 +6,7 @@
 #include <iostream>
 #include <sstream>
 #include <cstring>
+#include "schedule.h"
 
 using std::cout;
 using std::cin;
@@ -24,7 +25,9 @@ int main(int argc, char* argv[]){
         std::string name;
         cout << "Please enter the new Person name: ";
         cin >> name;
-        //call the schedule builder here
+
+        //call the schedule builder
+        Schedule::BuildScheduleFromInput();
 
     }
     else if (strcmp(&input, "Edit")==0) {

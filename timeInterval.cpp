@@ -72,6 +72,14 @@ void TimeInterval::SetEndTime(int time) {
 
 
 /**
+ * Returns a deep copy of the object
+ **/
+TimeInterval* TimeInterval::Clone() const {
+    return new TimeInterval(*this);
+}
+
+
+/**
  *
  **/
 int TimeInterval::Duration() const {

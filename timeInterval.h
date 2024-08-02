@@ -20,7 +20,7 @@ public:
     int GetEndTIme()const;
     void SetStartTime(int);
     void SetEndTime(int);
-    //virtual Object* Clone()const;
+    virtual TimeInterval* Clone() const override;
     virtual string CompareFreeDays(const Comparable* rhs)const;
     virtual string CompareForSharedFreeTime(const Comparable* rhs, int desiredFreeTimeAmt)const;
     int Duration() const;

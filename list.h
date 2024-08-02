@@ -20,7 +20,6 @@ public:
     virtual ~List();
     // Pure Virtual methods to be implemented on concrete classes
     virtual bool Insert(Object* element, size_t position) = 0;
-    virtual int IndexOf(const Object* element)const = 0;
     virtual Object* Remove(size_t position) = 0;
     virtual Object* Get(size_t position)const = 0;
     virtual string ToString()const = 0;

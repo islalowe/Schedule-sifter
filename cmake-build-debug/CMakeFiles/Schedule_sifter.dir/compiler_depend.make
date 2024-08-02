@@ -181,8 +181,8 @@ CMakeFiles/Schedule_sifter.dir/DoublyLinkedList.cpp.o: ../DoublyLinkedList.cpp \
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/bits/istream.tcc \
   /usr/include/c++/11/bits/sstream.tcc \
-  ../list.h \
   /usr/include/c++/11/iostream \
+  ../list.h \
   ../timeInterval.h \
   ../comparable.h
 
@@ -731,7 +731,13 @@ CMakeFiles/Schedule_sifter.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/bits/sstream.tcc \
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
-  /usr/include/strings.h
+  /usr/include/strings.h \
+  ../schedule.h \
+  ../object.h \
+  ../doublyLinkedList.h \
+  ../list.h \
+  ../timeInterval.h \
+  ../comparable.h
 
 CMakeFiles/Schedule_sifter.dir/object.cpp.o: ../object.cpp \
   /usr/include/stdc-predef.h \
@@ -1655,7 +1661,8 @@ CMakeFiles/Schedule_sifter.dir/timeInterval.cpp.o: ../timeInterval.cpp \
   /usr/include/c++/11/ostream \
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/bits/istream.tcc \
-  /usr/include/c++/11/bits/sstream.tcc
+  /usr/include/c++/11/bits/sstream.tcc \
+  /usr/include/c++/11/iostream
 
 
 ../TimeInterval.h:

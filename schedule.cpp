@@ -77,21 +77,30 @@ void Schedule::BuildScheduleFromInput() {
         cin >> works;
         int startTime, endTime;
 
-        while (works == 'y' || works == 'Y') {
-            TimeInterval interval;
+        if (works == 'y' || works == 'Y') {
+            //Make a new list for the day if there are no shifts on that day already
+            if (_week[i] == nullptr) {
+                DoublyLinkedList newDaySchedule = new DoublyLinkedList();
+                _week[i] = newDaySchedule;
+            }
 
-            cout << "What time do they start work on " << day << "? (24hr format: HHMM-HHMM): ";
-            cin >> startTime;
-            cout << "What time do they end work on " << day << "? (24hr format: HHMM-HHMM): ";
-            cin >> endTime;
-            interval.SetStartTime(startTime);
-            interval.SetEndTime(endTime);
+            while (works == 'y' || works == 'Y') {
+                TimeInterval* interval = new TimeInterval();
 
-            //Insert this time interval into the doubly linked list for the day
-            _week[i]->Insert(&interval, _week[i]->Size());
+                cout << "What time do they start work on " << day << "? (24hr format: HHMM): ";
+                cin >> startTime;
+                cout << "What time do they end work on " << day << "? (24hr format: HHMM): ";
+                cin >> endTime;
+                interval->SetStartTime(startTime);
+                interval->SetEndTime(endTime);
 
-            cout << "Does this person work again on " << day << "? (y/n): ";
-            cin >> works;
+                // Insert this time interval into the doubly linked list for the day
+                _week[i]->Insert(interval, _week[i]->Size());
+
+                cout << "Does this person work again on " << day << "? (y/n): ";
+                cin >> works;
+            }
         }
     }
 }
+

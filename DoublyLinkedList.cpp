@@ -60,6 +60,7 @@ DoublyLinkedList::~DoublyLinkedList() {
         delete tempNode;
         tempNode = _head;
     }
+//    Clear();
 }
 
 
@@ -222,6 +223,8 @@ void DoublyLinkedList::Clear() {
         delete tempNode;              //delete the tempNode and then
         tempNode = _head;             //use that variable to grab the next node that head is occupying and delete it
     }
+
+
     _size = 0;
     _head = nullptr;
     _tail = nullptr;
