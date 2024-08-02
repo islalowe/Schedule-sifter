@@ -13,11 +13,13 @@ Schedule ScheduleMaker(Person person);
 int UnitTests (int argc, char *argv[]) {
     cout << "There are the unit tests:" << endl;
 
-    timeInterval workInterval;      //global variable that will be reused
+    TimeInterval workInterval;      //global variable that will be reused
 
     //Making a friend: George
-    Person George;
-    //Schedule georgeSchedule = ;                    //make a schedule for George
+    Person George("George");                                                    //make a person with default schedule
+    Schedule georgeSchedule = ScheduleMaker(George);                    //make a schedule for George
+                        //give George his new schedule
+
     //Person *GEORGE = new Person("George", georgeSchedule);
     return 0;
 }

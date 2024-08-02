@@ -1,22 +1,22 @@
 //
 // Created by Isla Lowe on 6/16/24.
-// This is a doubly-linked list class that is called schedule
-//
 
 #ifndef SCHEDULE_SIFTER_SCHEDULE_H
 #define SCHEDULE_SIFTER_SCHEDULE_H
 
 #include "object.h"
+#include "doublyLinkedList.h"
 #include <sstream>
 using std::stringstream;
 
 class Schedule : public Object {
-
-
+    //fixme
+    //make an array of doubly-linked list pointers - the constructor will make them all nullptr
+    DoublyLinkedList* _week[7];
 public:
     Schedule();
     virtual ~Schedule();
-    virtual Object* Get(size_t position)const;
+    virtual DoublyLinkedList* Get(size_t day) const;
     virtual string ToString()const;
     void Clear(int day);
 

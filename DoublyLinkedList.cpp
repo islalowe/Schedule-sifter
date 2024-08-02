@@ -3,8 +3,15 @@
 //
 
 #include "DoublyLinkedList.h"
-#include "object.h"
 #include "sstream"
+
+
+/**
+ * Default Constructor
+ * Parent class initializes the size to 0
+ */
+DoublyLinkedList::DoublyLinkedList() {
+}
 
 
 /** Copy Constructor
@@ -13,12 +20,13 @@
 * this insertion is done using the Insert method.
 * @param other the list to be copied
 */
-DoubleLinkedList::DoubleLinkedList(const DoubleLinkedList &other) {
+DoublyLinkedList::DoublyLinkedList(const DoublyLinkedList &other) {
     //make a deep copy of the other list, using new
     //assign the copy to the current object data member(s)
     _head = nullptr;
     for (Node* tmp = other._head; tmp != nullptr; tmp = tmp->next){
-        Insert (tmp->data->Clone(), _size);
+        //todo idk what this is doing
+        Insert (dynamic_cast<TimeInterval *>(tmp->data->Clone()), _size);
     }
 }
 
@@ -31,23 +39,17 @@ DoubleLinkedList::DoubleLinkedList(const DoubleLinkedList &other) {
  * @param rhs the object to be copied into this
  * @return this to enable cascade assignments
  */
-DoubleLinkedList &DoubleLinkedList::operator=(const DoubleLinkedList &rhs) {
+DoublyLinkedList &DoublyLinkedList::operator=(const DoublyLinkedList &rhs) {
     _head = rhs._head;
     _tail = rhs._tail;
     return *this;
 }
 
-/**
- * Default Constructor
- * Parent class initializes the size to zero
- */
-DoubleLinkedList::DoubleLinkedList() {
-}
 
 /**
  * Destructor
  */
-DoubleLinkedList::~DoubleLinkedList() {
+DoublyLinkedList::~DoublyLinkedList() {
     // delete the whole list, by traversal in a while loop - go from head until reaching null
     Node *tempNode = _head;
     while (_head != nullptr) {
@@ -77,7 +79,7 @@ DoubleLinkedList::~DoubleLinkedList() {
  * @return true if it was possible to insert, false otherwise. It will not be able
  * to insert if the position is invalid.
  */
-bool DoubleLinkedList::Insert(Object* element, size_t position) {
+bool DoublyLinkedList::Insert(TimeInterval* busyTimeInterval, size_t position) {
     bool elementInserted = false;
     Node* neo = new Node;        //make a new node called neo
     neo -> next = nullptr;
@@ -87,7 +89,7 @@ bool DoubleLinkedList::Insert(Object* element, size_t position) {
     if ((_head == nullptr) && (position < _size)) {
         _head = neo;                //set head & tail to neo
         _tail = neo;
-        neo -> data = element;
+        neo -> data = busyTimeInterval;
         _size++;
         elementInserted = true;
     }
@@ -97,14 +99,14 @@ bool DoubleLinkedList::Insert(Object* element, size_t position) {
         neo -> next = _head;        //neo's next pointer points to the head
         _head = neo;
         _head -> previous = neo;
-        neo -> data = element;
+        neo -> data = busyTimeInterval;
         _size++;
         elementInserted = true;
     }
 
         //case # 3 insert in the middle or at the end
     else if (position <= _size) {
-        neo -> data = element;
+        neo -> data = busyTimeInterval;
         Node* tmp = _head;                     //move temp pointer to (position - 1), by traversal
         for (size_t i = 0; i < position - 1; i++) {
             tmp = tmp -> next;                 //temp is scooting forward along the list
@@ -129,42 +131,20 @@ bool DoubleLinkedList::Insert(Object* element, size_t position) {
 
 
 /**
- * Searches for the position of an element in the list.
- * The method performs a linear search, traversing the list, for the given
- * element.
- * If the element is found it returns the position, if it is not found it
- * returns -1. It is important to note that for this operation to succeed it
- * is necessary to override the method Equals of all the types inserted into
- * the list.
- * @param element the object that the client is searching for.
- * @return the position of the element if found, -1 otherwise.
- */
-int DoubleLinkedList::IndexOf(const Object* element) const {
-    int index = 0;
-    for (Node *tmp = _head; tmp != nullptr; tmp = tmp -> next) {
-        if (tmp -> data -> Equals(*element)) {
-            return index;
-        }
-        index++;
-    }
-    return -1;
-}
-
-/**
- * Removes the element at position, when the position is valid. It returns
- * the pointer to the removed element.
- * @param position the position of the element to be removed.
+ * Removes the TimeInterval at the given position within a day, when the position is valid.
+ * It returns the pointer to the removed element.
+ * @param position the position of the TimeInterval to be removed.
  * @return the pointer to the object in that position if the position was valid,
  * nullptr otherwise
  */
-Object* DoubleLinkedList::Remove(size_t position) {
+TimeInterval* DoublyLinkedList::Remove(size_t position) {
     if (position >= _size) {
         return nullptr;
     }
-    Object* retVal = nullptr;
+    TimeInterval* retVal = nullptr;
     Node* tmp = nullptr;
     if (position == 0) {                    // Want to remove the first element, _head
-        retVal = _head -> data;             //we will return the head element
+        retVal = dynamic_cast<TimeInterval *>(_head->data);             //we will return the head element
         _head -> data = nullptr;
         tmp = _head -> next;
         delete _head;
@@ -178,7 +158,7 @@ Object* DoubleLinkedList::Remove(size_t position) {
             tmp = tmp -> next;
         }
         Node* toRemove = tmp -> next;
-        retVal = toRemove -> data;           //returned object
+        retVal = dynamic_cast<TimeInterval *>(toRemove->data);           //returned object
         tmp -> next = toRemove -> next;
         toRemove -> next = nullptr;
         toRemove -> data = nullptr;
@@ -196,7 +176,7 @@ Object* DoubleLinkedList::Remove(size_t position) {
  * @param position the position of the element to retrieve.
  * @return a pointer to the element if the position is valid, nullptr otherwise
  */
-Object* DoubleLinkedList::Get(size_t position) const {
+Object* DoublyLinkedList::Get(size_t position) const {
     if (position >= _size){
         return nullptr;
     }
@@ -207,6 +187,7 @@ Object* DoubleLinkedList::Get(size_t position) const {
     return tmp -> data;
 }
 
+
 /**
  * Creates a string representation of the list. This representation
  * will be the string representation of the element.
@@ -214,7 +195,7 @@ Object* DoubleLinkedList::Get(size_t position) const {
  * -----------------------------------------------------------------------
  * @return a string representation of the list
  */
-string DoubleLinkedList::ToString() const {
+string DoublyLinkedList::ToString() const {
     std::stringstream retVal;
     Node* tmp = _head;
     //for (tmp = _head; tmp -> next != nullptr; tmp = tmp -> next) {
@@ -225,12 +206,13 @@ string DoubleLinkedList::ToString() const {
     return retVal.str();
 }
 
+
 /**
  * This method releases all the elements of the list.
  * It also sets the size to zero, and the head and tail pointers to nullptr.
  * This method makes the list become empty.
  */
-void DoubleLinkedList::Clear() {
+void DoublyLinkedList::Clear() {
     Node* tempNode = _head;
     while (_head != nullptr){
         _head = tempNode->next;       //head is being moved along the list, essentially erasing it from beginning to end

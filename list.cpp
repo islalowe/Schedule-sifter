@@ -6,9 +6,10 @@
 
 /**
  * Default Constructor
- * Just initializes the size to seven
+ * Just initializes the size to 0, because this is for the DoublyLinkedList of the TimeIntervals - and there may be 0
  */
-List::List() : _size(7){
+List::List() : _size(0){
+
 
 }
 /**

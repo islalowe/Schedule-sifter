@@ -1,6 +1,10 @@
 //
 // Created by Isla Lowe on 6/16/24.
 //
+/**
+ * The TimeInterval Class is an object that contains the information of a particular block of time during which
+ * a person is busy.
+ **/
 
 #include "timeInterval.h"
 
@@ -30,7 +34,7 @@ TimeInterval::TimeInterval(int start, int end) {
  **/
 string TimeInterval::ToString()const {
     stringstream ssTime;
-    ssTime << "Work Start: " << _startTime << ", Work End" << _endTime << std::endl;
+    ssTime << "Time Interval Start: " << _startTime << ", Time Interval End" << _endTime << std::endl;
     return ssTime.str();
 }
 
@@ -67,14 +71,9 @@ void TimeInterval::SetEndTime(int time) {
 }
 
 
-
-
 /**
  *
  **/
-
-
-
 int TimeInterval::Duration() const {
     return _endTime - _startTime;
 }

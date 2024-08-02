@@ -11,30 +11,29 @@
 
 #include "object.h"
 #include "list.h"
+#include "timeInterval.h"
 #include <string>
 using std::string;
 
-class DoubleLinkedList : public List {
+class DoublyLinkedList : public List {
 protected:
     struct Node{
-        Object* data;
+        Object* data;      // the Object that data will be is a TimeInterval. the * indicates a pointer to the interval
         Node* next;
         Node* previous;
     };
     Node* _head;
     Node* _tail;
-    DoubleLinkedList(const DoubleLinkedList& other);
-    DoubleLinkedList& operator=(const DoubleLinkedList& rhs);
+    DoublyLinkedList(const DoublyLinkedList& other);
+    DoublyLinkedList& operator=(const DoublyLinkedList& rhs);
 public:
-    DoubleLinkedList();
-    virtual ~DoubleLinkedList();
-    virtual bool Insert(Object* element, size_t position);
-    virtual int IndexOf(const Object* element)const;
-    virtual Object* Remove(size_t position);
+    DoublyLinkedList();
+    virtual ~DoublyLinkedList();
+    virtual bool Insert(TimeInterval* element, size_t position);
+    virtual TimeInterval* Remove(size_t position);
     virtual Object* Get(size_t position)const;
     virtual string ToString()const;
     virtual void Clear();
-
 };
 
 

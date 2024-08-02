@@ -150,4 +150,5 @@ CMakeFiles/Schedule_sifter.dir/DoublyLinkedList.cpp.o: \
  /usr/include/c++/11/bits/ostream.tcc \
  /usr/include/c++/11/bits/istream.tcc \
  /usr/include/c++/11/bits/sstream.tcc /tmp/Schedule-sifter/list.h \
- /usr/include/c++/11/iostream
+ /usr/include/c++/11/iostream /tmp/Schedule-sifter/timeInterval.h \
+ /tmp/Schedule-sifter/comparable.h

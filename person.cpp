@@ -9,10 +9,25 @@
 
 
 /**
- * Constructor
+ * Default Constructor.
  */
-Person::Person(const string& personName) {
+Person::Person() {
+    _name = "no name";
+    //make an empty schedule for creating a new person who doesn't have one set up yet
+    Schedule newSchedule;
+    //the schedule constructor makes an empty one by default
+    _schedule = newSchedule;
+}
+
+
+/**
+ * Constructor with parameters.
+ * @param personName: a string value that will be set as the _name data member of the Person object.
+ * @param personSchedule: a schedule object that will be set as the _schedule data member of the Person.
+ */
+Person::Person(const string& personName, Schedule& personSchedule) {
     _name = personName;
+    _schedule = personSchedule;
 }
 
 
@@ -21,21 +36,20 @@ Person::Person(const string& personName) {
  */
 Person::Person(const Person &rhs) {
     _name = rhs._name;
+    _schedule = rhs._schedule;
 }
 
 
 /**
  * Copy Assignment Operator
  */
-const Person &Person::operator=(const Person &rhs) {
+const Person& Person::operator=(const Person &rhs) {
     if (this == &rhs) {
         // Checking for self-assignment
         return *this;
     }
     _name = rhs._name;
-    //fixme use a setter for _schedule or make _schedule public
-    //_schedule = rhs._schedule; // Assuming Schedule class has a proper assignment operator
-
+    _schedule = rhs._schedule;
     return *this;
 }
 
@@ -43,16 +57,27 @@ const Person &Person::operator=(const Person &rhs) {
 /**
  * Destructor
  */
+ //fixme do all of this
 Person::~Person() {
 
 }
 
-
+/**
+ * Returns a string representation of the current Person object's name and schedule.
+ */
 string Person::ToString() const {
-    return Comparable::ToString();
+    stringstream personInfo;
+    personInfo << "Name: " << _name << ". Schedule: ";
+    //this should call the ToString that returns the start and end times
+    personInfo << Comparable::ToString() << std::endl;
+    //personInfo << TimeInterval::ToString() << std::endl;
+    return personInfo.str();
 }
 
-
+/**
+ *
+ */
+ //todo --> I don't know if this is useful yet
 bool Person::Equals(const Object& rhs)const {
     return false;
 }

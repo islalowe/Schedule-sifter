@@ -1,6 +1,9 @@
 //
 // Created by Isla Lowe on 6/16/24.
 //
+/**
+ * The Person Class contains a Schedule object as a member variable.
+ **/
 
 #ifndef SCHEDULE_SIFTER_PERSON_H
 #define SCHEDULE_SIFTER_PERSON_H
@@ -15,7 +18,8 @@ class Person : public Comparable{
     string _name;
     Schedule _schedule;
 public:
-    Person(const string& personName);
+    Person();
+    Person(const string& personName, Schedule& personSchedule);
     Person(const Person& rhs);
     const Person& operator=(const Person& rhs);
     virtual ~Person();
