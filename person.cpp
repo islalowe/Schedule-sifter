@@ -21,6 +21,18 @@ Person::Person() {
 
 
 /**
+ * Constructor with one parameter.
+ */
+Person::Person(const string& personName) {
+    _name = personName;
+    //make an empty schedule for creating a new person who doesn't have one set up yet
+    Schedule newSchedule;
+    //the schedule constructor makes an empty one by default
+    _schedule = newSchedule;
+}
+
+
+/**
  * Constructor with parameters.
  * @param personName: a string value that will be set as the _name data member of the Person object.
  * @param personSchedule: a schedule object that will be set as the _schedule data member of the Person.
@@ -55,12 +67,27 @@ const Person& Person::operator=(const Person &rhs) {
 
 
 /**
- * Destructor
+ * Destructor - doesn't do anything, no memory is dynamically allocated
  */
- //fixme do all of this
 Person::~Person() {
-
 }
+
+
+/**
+ * Setter to assign a Schedule to a Person;
+ */
+void Person::SetSchedule(Schedule& schedule) {
+    _schedule = schedule;
+}
+
+
+/**
+ * Getter to return the schedule of a person.
+ */
+Schedule Person::GetSchedule(Person& person) {
+    return _schedule;
+}
+
 
 /**
  * Returns a string representation of the current Person object's name and schedule.
@@ -83,9 +110,9 @@ bool Person::Equals(const Object& rhs)const {
 }
 
 
-//Object* Person::Clone()const {
-//
-//}
+Object* Person::Clone()const {
+    return new Person(*this);
+}
 
 
 /**

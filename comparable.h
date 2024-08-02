@@ -9,8 +9,6 @@
 
 class Comparable : public Object{
 public:
-
-
     /**
      * This method compares two Comparable objects.
      * This method is virtual pure, it must be implemented by Comparable's

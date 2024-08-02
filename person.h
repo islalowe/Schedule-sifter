@@ -19,10 +19,13 @@ class Person : public Comparable{
     Schedule _schedule;
 public:
     Person();
+    Person(const string& personName);
     Person(const string& personName, Schedule& personSchedule);
     Person(const Person& rhs);
     const Person& operator=(const Person& rhs);
     virtual ~Person();
+    void SetSchedule(Schedule& schedule);
+    Schedule GetSchedule(Person& person);
     virtual string ToString()const;
     virtual bool Equals(const Object& rhs)const;
     virtual Object* Clone()const;
