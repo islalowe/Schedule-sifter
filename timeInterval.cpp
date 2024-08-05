@@ -91,7 +91,7 @@ string TimeInterval::CompareFreeDays(const Comparable* rhs)const {
 /**
  * Returns a string representation of which times during the coming week that are free for both given schedules
  **/
-//todo change this eventually to accomodate comparing more schedules at once
+//todo change this eventually to accommodate comparing more schedules at once
 string TimeInterval::CompareForSharedFreeTime(const Comparable* rhs, int desiredFreeTimeAmt)const {
     return "Shared free days\n";
 }

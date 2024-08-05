@@ -21,7 +21,7 @@ int main(int argc, char* argv[]){
     cout << "If you would like to create a new Person profile, please enter \"New\". " << endl;
     cout << "If you would like to edit an exiting Person profile, please enter \"Edit\". " << endl;
     cin >> input;
-    if (strcmp(&input, "New")==0) {
+    if ((strcmp(&input, "New")==0) || (strcmp(&input, "new")==0)){
         std::string name;
         cout << "Please enter the new Person name: ";
         cin >> name;
@@ -30,17 +30,15 @@ int main(int argc, char* argv[]){
         Schedule newSchedule;
         newSchedule.BuildScheduleFromInput(); // Call the member function on an instance
 
-
-
     }
-    else if (strcmp(&input, "Edit")==0) {
+    else if ((strcmp(&input, "Edit")==0) || (strcmp(&input, "edit")==0)){
 
     }
     // Error handling
     while  ((!strcmp(&input, "N")) && (!strcmp(&input, "E"))) {
         cout << "Please enter a valid response." << endl;
-        cout << "If you would like to create a new Person profile, please enter \"N\". " << endl;
-        cout << "If you would like to enit an exiting Person profile, please enter \"E\". " << endl;
+        cout << "If you would like to create a new Person profile, please enter \"New\". " << endl;
+        cout << "If you would like to enit an exiting Person profile, please enter \"Edit\". " << endl;
         cin >> input;
 
     }
