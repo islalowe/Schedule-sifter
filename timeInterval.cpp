@@ -80,6 +80,24 @@ TimeInterval* TimeInterval::Clone() const {
 
 
 /**
+ * Returns a string representation of which days in the coming week on which the given schedules have no TimeIntervals
+ **/
+ //todo change this eventually to accomodate comparing more schedules at once
+string TimeInterval::CompareFreeDays(const Comparable* rhs)const {
+    return "Common free days\n";
+}
+
+
+/**
+ * Returns a string representation of which times during the coming week that are free for both given schedules
+ **/
+//todo change this eventually to accomodate comparing more schedules at once
+string TimeInterval::CompareForSharedFreeTime(const Comparable* rhs, int desiredFreeTimeAmt)const {
+    return "Shared free days\n";
+}
+
+
+/**
  *
  **/
 int TimeInterval::Duration() const {

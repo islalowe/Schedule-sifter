@@ -13,10 +13,19 @@
 /**
  * Constructor
  **/
- //todo *?*?*?*?*?*
-Schedule::Schedule() {
+ Schedule::Schedule() {
+     for (int i = 0; i < 7; ++i) {
+         _week[i] = new DoublyLinkedList(); // Initialize each day with an empty DoublyLinkedList
+     }
+ }
+
+
+/**
+* Copy Constructor
+**/
+Schedule::Schedule(const Schedule &other) {
     for (int i = 0; i < 7; ++i) {
-        _week[i] = nullptr;
+        _week[i] = new DoublyLinkedList(*other._week[i]);
     }
 }
 
@@ -80,7 +89,7 @@ void Schedule::BuildScheduleFromInput() {
         if (works == 'y' || works == 'Y') {
             //Make a new list for the day if there are no shifts on that day already
             if (_week[i] == nullptr) {
-                DoublyLinkedList newDaySchedule = new DoublyLinkedList();
+                DoublyLinkedList* newDaySchedule = new DoublyLinkedList();
                 _week[i] = newDaySchedule;
             }
 

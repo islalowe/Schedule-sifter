@@ -24,16 +24,17 @@ protected:
     };
     Node* _head;
     Node* _tail;
-    DoublyLinkedList(const DoublyLinkedList& other);
+
     DoublyLinkedList& operator=(const DoublyLinkedList& rhs);
 public:
     DoublyLinkedList();
+    DoublyLinkedList(const DoublyLinkedList& other);
     virtual ~DoublyLinkedList();
-    virtual bool Insert(TimeInterval* element, size_t position);
-    virtual TimeInterval* Remove(size_t position);
-    virtual Object* Get(size_t position)const;
-    virtual string ToString()const;
-    virtual void Clear();
+    bool Insert(Object* element, size_t position) override;
+    TimeInterval* Remove(size_t position) override;
+    Object* Get(size_t position)const override;
+    string ToString()const override;
+    void Clear() override;
 };
 
 

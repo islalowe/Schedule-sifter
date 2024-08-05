@@ -27,7 +27,10 @@ int main(int argc, char* argv[]){
         cin >> name;
 
         //call the schedule builder
-        Schedule::BuildScheduleFromInput();
+        Schedule newSchedule;
+        newSchedule.BuildScheduleFromInput(); // Call the member function on an instance
+
+
 
     }
     else if (strcmp(&input, "Edit")==0) {

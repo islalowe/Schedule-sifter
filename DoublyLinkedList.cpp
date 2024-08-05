@@ -11,6 +11,8 @@
  * Parent class initializes the size to 0
  */
 DoublyLinkedList::DoublyLinkedList() {
+    _head = nullptr;
+    _tail = nullptr;
 }
 
 
@@ -21,14 +23,14 @@ DoublyLinkedList::DoublyLinkedList() {
 * @param other the list to be copied
 */
 DoublyLinkedList::DoublyLinkedList(const DoublyLinkedList &other) {
-    //make a deep copy of the other list, using new
-    //assign the copy to the current object data member(s)
     _head = nullptr;
-    for (Node* tmp = other._head; tmp != nullptr; tmp = tmp->next){
-        //todo idk what this is doing
-        Insert (dynamic_cast<TimeInterval *>(tmp->data->Clone()), _size);
+    _tail = nullptr;
+    _size = 0;
+    for (Node* tmp = other._head; tmp != nullptr; tmp = tmp->next) {
+        Insert(dynamic_cast<TimeInterval*>(tmp->data->Clone()), _size);
     }
 }
+
 
 
 //A& A::operator=(const &A)
@@ -80,54 +82,42 @@ DoublyLinkedList::~DoublyLinkedList() {
  * @return true if it was possible to insert, false otherwise. It will not be able
  * to insert if the position is invalid.
  */
-bool DoublyLinkedList::Insert(TimeInterval* busyTimeInterval, size_t position) {
-    bool elementInserted = false;
-    Node* neo = new Node;        //make a new node called neo
-    neo -> next = nullptr;
-    neo -> previous = nullptr;
-
-    //case #1 list is empty
-    if ((_head == nullptr) && (position < _size)) {
-        _head = neo;                //set head & tail to neo
-        _tail = neo;
-        neo -> data = busyTimeInterval;
-        _size++;
-        elementInserted = true;
+bool DoublyLinkedList::Insert(Object* busyTimeInterval, size_t position){
+    if (position > _size) {     // Check for position validity
+        return false;
     }
 
-        //case #2 insert at position 0
-    else if (position == 0) {
-        neo -> next = _head;        //neo's next pointer points to the head
+    Node* neo = new Node;
+    neo->data = busyTimeInterval;
+    neo->next = nullptr;
+    neo->previous = nullptr;
+
+    if (_head == nullptr && position == 0) {  // Insert in an empty list
+        _head = _tail = neo;
+    }
+    else if (position == 0) {  // Insert at the head
+        neo->next = _head;
+        _head->previous = neo;
         _head = neo;
-        _head -> previous = neo;
-        neo -> data = busyTimeInterval;
-        _size++;
-        elementInserted = true;
     }
-
-        //case # 3 insert in the middle or at the end
-    else if (position <= _size) {
-        neo -> data = busyTimeInterval;
-        Node* tmp = _head;                     //move temp pointer to (position - 1), by traversal
-        for (size_t i = 0; i < position - 1; i++) {
-            tmp = tmp -> next;                 //temp is scooting forward along the list
+    else {  // Insert at given position or at the end
+        Node* tmp = _head;
+        for (size_t i = 0; i < position - 1; ++i) {
+            tmp = tmp->next;
         }
-        neo -> next = tmp -> next;             //neo catches up to sit next to temp
-        tmp -> next = neo;                     //tmp is placed behind neo
-        neo -> previous = tmp;                 //neo's previous pointer points to temp
-        if (neo -> next == nullptr) {          //if neo is last, it becomes the tail
+        neo->next = tmp->next;
+        neo->previous = tmp;
+        if (tmp->next) {
+            tmp->next->previous = neo;
+        }
+        tmp->next = neo;
+        if (neo->next == nullptr) {
             _tail = neo;
         }
-        else {
-            neo -> next -> previous = neo;
-        }
-        _size++;
-        elementInserted = true;
     }
-    if (!elementInserted) {
-        delete neo;
-    }
-    return elementInserted;
+
+    ++_size;
+    return true;
 }
 
 

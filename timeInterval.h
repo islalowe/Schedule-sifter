@@ -7,6 +7,8 @@
 
 
 #include "comparable.h"
+#include <iostream>
+
 
 class TimeInterval : public Comparable {
     bool _busy;
