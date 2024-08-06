@@ -180,19 +180,34 @@ Object* DoublyLinkedList::Get(size_t position) const {
 
 
 /**
- * Creates a string representation of the list. This representation
- * will be the string representation of the element.
- * ex: "Person: {name: George, age: 12}"
+ * Creates a string representation of the list.
+ * This list is of all of the shifts/busy TimeIntervals that a schedule has for a particular day.
+ * ex: "Start: 0900 - End: 1700"
  * -----------------------------------------------------------------------
  * @return a string representation of the list
  */
 string DoublyLinkedList::ToString() const {
     std::stringstream retVal;
+
+
+    retVal << "Start: /// - End: ///";
     Node* tmp = _head;
+
+    // Check if the list is empty
+    if (tmp == nullptr) {
+        retVal << "No TimeIntervals";
+        return retVal.str();
+    }
+
     //for (tmp = _head; tmp -> next != nullptr; tmp = tmp -> next) {
     for (size_t i = 0; i < _size; i++) {
-        retVal << tmp -> data -> ToString() << ", ";
-        tmp = tmp -> next;
+        if (tmp->data) {
+            retVal << tmp->data->ToString();
+            if (tmp->next != nullptr) {
+                retVal << ", ";
+            }
+        }
+        tmp = tmp->next;
     }
     return retVal.str();
 }

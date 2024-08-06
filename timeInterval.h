@@ -18,7 +18,7 @@ public:
     TimeInterval();
     TimeInterval(int start, int end);
     ~TimeInterval();
-    virtual string ToString()const;
+    string ToString()const override;
     int GetStartTIme()const;
     int GetEndTIme()const;
     void SetStartTime(int);
