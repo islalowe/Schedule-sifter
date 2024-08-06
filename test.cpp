@@ -56,7 +56,6 @@ Schedule ScheduleMaker(Person& person, const int scheduleData[21]) {
             returnSchedule.Get(i)->Insert(&workInterval, scheduleData[i * 3]);
         }
     }
-
     person.SetSchedule(returnSchedule);
     return returnSchedule;
 }

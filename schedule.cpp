@@ -112,6 +112,8 @@ void Schedule::BuildScheduleFromInput() {
 
                 cout << "Does this person work again on " << day << "? (y/n): ";
                 cin >> works;
+
+                delete interval;            // For memory management
             }
         }
     }

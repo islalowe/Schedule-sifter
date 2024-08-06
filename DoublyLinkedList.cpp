@@ -42,8 +42,19 @@ DoublyLinkedList::DoublyLinkedList(const DoublyLinkedList &other) {
  * @return this to enable cascade assignments
  */
 DoublyLinkedList &DoublyLinkedList::operator=(const DoublyLinkedList &rhs) {
-    _head = rhs._head;
-    _tail = rhs._tail;
+    if (this == &rhs) {
+        // Self-assignment check
+        return *this;
+    }
+
+    // Clean up existing resources
+    Clear();
+
+    // Deep copy new resources
+    for (Node* tmp = rhs._head; tmp != nullptr; tmp = tmp->next) {
+        Insert(tmp->data->Clone(), _size);
+    }
+
     return *this;
 }
 
@@ -233,5 +244,4 @@ void DoublyLinkedList::Clear() {
     _size = 0;
     _head = nullptr;
     _tail = nullptr;
-    delete tempNode;
 }
