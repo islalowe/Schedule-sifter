@@ -30,6 +30,13 @@ TimeInterval::TimeInterval(int start, int end) {
 
 
 /**
+ * Destructor
+ **/
+TimeInterval::~TimeInterval() {
+}
+
+
+/**
  * Returns a string representation of the time interval
  **/
 string TimeInterval::ToString()const {
@@ -82,7 +89,7 @@ TimeInterval* TimeInterval::Clone() const {
 /**
  * Returns a string representation of which days in the coming week on which the given schedules have no TimeIntervals
  **/
- //todo change this eventually to accomodate comparing more schedules at once
+ //todo change this eventually to accommodate comparing more schedules at once
 string TimeInterval::CompareFreeDays(const Comparable* rhs)const {
     return "Common free days\n";
 }

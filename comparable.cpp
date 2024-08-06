@@ -15,7 +15,6 @@ using std::stringstream;
  * (the value of this)
  * @return a string representation of a comparable object
  */
-
 string Comparable::ToString() const {
     stringstream retVal;
     retVal << "Comparable @ " << this;

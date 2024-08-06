@@ -57,8 +57,12 @@ Schedule::~Schedule() {
 string Schedule::ToString() const {
     stringstream scheduleString;
     for (int i = 0; i < 7; ++i) {
-        scheduleString << "Day " << i << ": " << _week[i]->ToString() << std::endl;
+        scheduleString << "Day " << i << ": " << _week[i]->ToString();
+        if (i < 6) {
+            scheduleString << ", ";
+        }
     }
+    scheduleString << std::endl;
     return scheduleString.str();
 }
 

@@ -94,10 +94,9 @@ Schedule Person::GetSchedule(Person& person) {
  */
 string Person::ToString() const {
     stringstream personInfo;
-    personInfo << "Name: " << _name << ". Schedule: ";
-    //this should call the ToString that returns the start and end times
-    personInfo << Comparable::ToString() << std::endl;
-    //personInfo << TimeInterval::ToString() << std::endl;
+    personInfo << "Name: " << _name << ", Schedule: ";
+    //this should call the ToString that returns the start and end times, from the Schedule class
+    personInfo << _schedule.ToString() << std::endl;
     return personInfo.str();
 }
 

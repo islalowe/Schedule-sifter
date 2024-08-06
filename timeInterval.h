@@ -17,6 +17,7 @@ class TimeInterval : public Comparable {
 public:
     TimeInterval();
     TimeInterval(int start, int end);
+    ~TimeInterval();
     virtual string ToString()const;
     int GetStartTIme()const;
     int GetEndTIme()const;
