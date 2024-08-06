@@ -2,8 +2,8 @@
 //// Created by Isla Lowe on 6/11/24.
 ////
 //
-////To complie and run the main function:
-////-->   g++ -o main main.cpp person.cpp Schedule.cpp TimeInterval.cpp
+////To compile and run the main function:
+////-->   g++ -g -o my_project main.cpp DoublyLinkedList.cpp object.cpp list.cpp timeInterval.cpp schedule.cpp person.cpp
 ////-->   ./main
 //
 //

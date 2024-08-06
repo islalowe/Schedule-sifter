@@ -10,8 +10,7 @@
 using std::stringstream;
 
 class Schedule : public Object {
-    //fixme
-    //make an array of doubly-linked list pointers - the constructor will make them all nullptr
+    // An array of doubly-linked list pointers - the constructor will make them all nullptr
     DoublyLinkedList* _week[7];
 public:
     Schedule();
@@ -22,8 +21,8 @@ public:
     void Clear(int day);
     void BuildScheduleFromInput();
 
-//    vector<TimeInterval> FindCommonFreeTime(const Schedule& other, int minDuration) const;
-//    bool HasFullFreeDay(const Schedule& other) const;
+    //vector<TimeInterval> FindCommonFreeTime(const Schedule& other, int minDuration) const;
+    //vector<string> ListFullFreeDays(const Schedule& other) const;
 };
 
 

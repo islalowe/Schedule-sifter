@@ -53,6 +53,8 @@ DoublyLinkedList &DoublyLinkedList::operator=(const DoublyLinkedList &rhs) {
     // Deep copy new resources
     for (Node* tmp = rhs._head; tmp != nullptr; tmp = tmp->next) {
         Insert(tmp->data->Clone(), _size);
+        // fixme this delete is prolly wrong
+        //delete tmp;
     }
 
     return *this;

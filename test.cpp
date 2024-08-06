@@ -2,7 +2,7 @@
 // Created by Isla Lowe on 7/22/24.
 //
 //To complie and run tests:
-//-->     g++ -o test test.cpp person.cpp Schedule.cpp TimeInterval.cpp
+//-->     g++ -g -o my_project main.cpp DoublyLinkedList.cpp object.cpp list.cpp timeInterval.cpp schedule.cpp person.cpp
 //-->     ./test
 
 

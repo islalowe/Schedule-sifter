@@ -91,10 +91,11 @@ void Schedule::BuildScheduleFromInput() {
         int startTime, endTime;
 
         if (works == 'y' || works == 'Y') {
-            //Make a new list for the day if there are no shifts on that day already
+            // Make a new list for the day if there are no shifts on that day already
             if (_week[i] == nullptr) {
                 DoublyLinkedList* newDaySchedule = new DoublyLinkedList();
                 _week[i] = newDaySchedule;
+                delete newDaySchedule;          // For memory management
             }
 
             while (works == 'y' || works == 'Y') {
