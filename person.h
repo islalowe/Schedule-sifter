@@ -22,13 +22,13 @@ public:
     Person(const string& personName);
     Person(const string& personName, Schedule& personSchedule);
     Person(const Person& rhs);
-    const Person& operator=(const Person& rhs);
-    virtual ~Person();
+    Person& operator=(const Person& rhs);
+    ~Person() override;
     void SetSchedule(Schedule& schedule);
     Schedule GetSchedule(Person& person);
-    virtual string ToString()const;
-    virtual bool Equals(const Object& rhs)const;
-    virtual Object* Clone()const;
+    string ToString()const override;
+    bool Equals(const Object& rhs)const override;
+    Object* Clone()const override;
     virtual string CompareFreeDays(const Comparable* rhs)const;
     virtual string CompareForSharedFreeTime(const Comparable* rhs, int desiredFreeTimeAmt)const;
 

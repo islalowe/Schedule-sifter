@@ -67,6 +67,7 @@ string Schedule::ToString() const {
 }
 
 
+//todo this should be used but isn't
 /**
  * Clears the doubly-linked list of TimeIntervals for a given day
  **/

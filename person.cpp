@@ -109,6 +109,10 @@ bool Person::Equals(const Object& rhs)const {
 }
 
 
+/**
+ *
+ */
+//todo
 Object* Person::Clone()const {
     return new Person(*this);
 }
@@ -122,6 +126,7 @@ Object* Person::Clone()const {
 string Person::CompareFreeDays(const Comparable* rhs)const {
     return "";
 }
+
 
 /**
  * Returns a string representation of all of the days off in the given week
