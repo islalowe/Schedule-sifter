@@ -11,13 +11,13 @@ using std::stringstream;
 
 class Schedule : public Object {
     // An array of doubly-linked list pointers - the constructor will make them all nullptr
-    DoublyLinkedList* _week[7];
+    DoublyLinkedList* _week[7]{};
 public:
     Schedule();
     Schedule(const Schedule &other);
-    virtual ~Schedule();
+    ~Schedule() override;
     virtual DoublyLinkedList* Get(size_t day) const;
-    virtual string ToString()const;
+    string ToString()const override;
     void Clear(int day);
     void BuildScheduleFromInput();
 

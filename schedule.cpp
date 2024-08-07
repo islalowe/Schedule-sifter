@@ -12,8 +12,12 @@
 
 /**
  * Constructor
+ * _week is initialized first in a constructor initializer list because _week is an array of pointers.
+ * If not explicitly initialized, the pointers in _week may be garbage values and
+ * not be nullptr initially, leading to potential issues.
  **/
- Schedule::Schedule() {
+
+ Schedule::Schedule() : _week() {
      for (int i = 0; i < 7; ++i) {
          _week[i] = new DoublyLinkedList(); // Initialize each day with an empty DoublyLinkedList
      }
@@ -23,7 +27,7 @@
 /**
 * Copy Constructor
 **/
-Schedule::Schedule(const Schedule &other) {
+Schedule::Schedule(const Schedule &other) : _week() {
     for (int i = 0; i < 7; ++i) {
         _week[i] = new DoublyLinkedList(*other._week[i]);
     }
@@ -96,7 +100,6 @@ void Schedule::BuildScheduleFromInput() {
             if (_week[i] == nullptr) {
                 DoublyLinkedList* newDaySchedule = new DoublyLinkedList();
                 _week[i] = newDaySchedule;
-                delete newDaySchedule;          // For memory management
             }
 
             while (works == 'y' || works == 'Y') {
@@ -115,7 +118,6 @@ void Schedule::BuildScheduleFromInput() {
                 cout << "Does this person work again on " << day << "? (y/n): ";
                 cin >> works;
 
-                delete interval;            // For memory management
             }
         }
     }

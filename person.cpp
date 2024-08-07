@@ -55,7 +55,7 @@ Person::Person(const Person &rhs) {
 /**
  * Copy Assignment Operator
  */
-const Person& Person::operator=(const Person &rhs) {
+Person& Person::operator=(const Person &rhs) {
     if (this == &rhs) {
         // Checking for self-assignment
         return *this;
