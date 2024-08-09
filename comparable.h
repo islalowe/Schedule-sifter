@@ -17,8 +17,7 @@ public:
      * @return a string representation of all of the days off in the given week in which the current object
      * and rhs Person both have coinciding free time.
      */
-     //todo
-     //virtual string CompareFreeDays(const Comparable* rhs)const;
+     virtual string CompareFreeDays(const Comparable* rhs) const = 0;
 
 
     /**
@@ -29,9 +28,8 @@ public:
     * @return a string representation of all of the days off in the given week in which the current object
     * and rhs Person both have coinciding free time in the amount specified in the parameter.
     */
-    //todo
-     // virtual string CompareForSharedFreeTime(const Comparable* rhs, int desiredFreeTimeAmt)const;
-     virtual string ToString()const;
+    virtual string CompareForSharedFreeTime(const Comparable* rhs, int desiredFreeTimeAmt) const = 0;
+    virtual string ToString()const;
 };
 
 

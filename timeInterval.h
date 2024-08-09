@@ -17,12 +17,13 @@ class TimeInterval : public Comparable {
 public:
     TimeInterval();
     TimeInterval(int start, int end);
-    ~TimeInterval();
+    ~TimeInterval() override;
     string ToString()const override;
-    int GetStartTIme()const;
-    int GetEndTIme()const;
+    int GetStartTime()const;
+    int GetEndTime()const;
     void SetStartTime(int);
     void SetEndTime(int);
+
     virtual TimeInterval* Clone() const override;
     virtual string CompareFreeDays(const Comparable* rhs)const;
     virtual string CompareForSharedFreeTime(const Comparable* rhs, int desiredFreeTimeAmt)const;

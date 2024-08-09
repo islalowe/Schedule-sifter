@@ -20,12 +20,12 @@ class Person : public Comparable{
 public:
     Person();
     Person(const string& personName);
-    Person(const string& personName, Schedule& personSchedule);
+    Person(const string& personName, const Schedule& personSchedule);
     Person(const Person& rhs);
     Person& operator=(const Person& rhs);
     ~Person() override;
     void SetSchedule(Schedule& schedule);
-    Schedule GetSchedule(Person& person);
+    const Schedule& GetSchedule() const;
     string ToString()const override;
     bool Equals(const Object& rhs)const override;
     Object* Clone()const override;

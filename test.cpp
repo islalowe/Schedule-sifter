@@ -60,7 +60,7 @@ Schedule ScheduleMaker(Person& person, const int scheduleData[21]) {
     return returnSchedule;
 }
 
-// Comment this main out to run the interactive code in Main.cpp straight from the IDE
+// Comment this main function out to run the interactive code in Main.cpp straight from the IDE
 int main(int argc, char *argv[]) {
     return UnitTests(argc, argv);
 }

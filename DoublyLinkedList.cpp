@@ -46,15 +46,10 @@ DoublyLinkedList &DoublyLinkedList::operator=(const DoublyLinkedList &rhs) {
         // Self-assignment check
         return *this;
     }
-
-    // Clean up existing resources
     Clear();
-
     // Deep copy new resources
     for (Node* tmp = rhs._head; tmp != nullptr; tmp = tmp->next) {
         Insert(tmp->data->Clone(), _size);
-        // fixme this delete is prolly wrong
-        //delete tmp;
     }
 
     return *this;
@@ -66,16 +61,16 @@ DoublyLinkedList &DoublyLinkedList::operator=(const DoublyLinkedList &rhs) {
  */
 DoublyLinkedList::~DoublyLinkedList() {
     // delete the whole list, by traversal in a while loop - go from head until reaching null
-    Node *tempNode = _head;
-    while (_head != nullptr) {
-        _head = tempNode->next;
-        if (tempNode->data) {
-            delete tempNode->data;
-        }
+    Node* tempNode = _head;
+    while (tempNode != nullptr) {
+        Node* nextNode = tempNode->next;
+        delete tempNode->data; // Assuming `data` is dynamically allocated
         delete tempNode;
-        tempNode = _head;
+        tempNode = nextNode;
     }
-//    Clear();
+    _head = nullptr;
+    _tail = nullptr;
+    _size = 0;
 }
 
 
@@ -145,31 +140,37 @@ TimeInterval* DoublyLinkedList::Remove(size_t position) {
     if (position >= _size) {
         return nullptr;
     }
+
     TimeInterval* retVal = nullptr;
-    Node* tmp = nullptr;
-    if (position == 0) {                    // Want to remove the first element, _head
-        retVal = dynamic_cast<TimeInterval *>(_head->data);             //we will return the head element
-        _head -> data = nullptr;
-        tmp = _head -> next;
-        delete _head;
-        _head = tmp;                        // the head got deleted, and the stored value becomes the new head
-        _head -> previous = nullptr;
-        //    _head -> next = nullptr;
-    }
-    else {
-        tmp = _head;
-        for (size_t i = 0; i < position - 1; i++){
-            tmp = tmp -> next;
+    Node* toRemove = nullptr;
+
+    if (position == 0) { // Removing the head node
+        toRemove = _head;
+        retVal = dynamic_cast<TimeInterval*>(toRemove->data);
+        _head = _head->next;
+        if (_head) {
+            _head->previous = nullptr;
+        } else {
+            _tail = nullptr; // List is now empty
         }
-        Node* toRemove = tmp -> next;
-        retVal = dynamic_cast<TimeInterval *>(toRemove->data);           //returned object
-        tmp -> next = toRemove -> next;
-        toRemove -> next = nullptr;
-        toRemove -> data = nullptr;
-        toRemove -> previous = nullptr;
-        delete toRemove;
+    } else {
+        Node* prevNode = _head;
+        for (size_t i = 0; i < position - 1; ++i) {
+            prevNode = prevNode->next;
+        }
+        toRemove = prevNode->next;
+        retVal = dynamic_cast<TimeInterval*>(toRemove->data);
+        prevNode->next = toRemove->next;
+        if (toRemove->next) {
+            toRemove->next->previous = prevNode;
+        } else {
+            _tail = prevNode; // Updating tail if we removed the last element
+        }
     }
-    _size--;
+
+    delete toRemove; // This also deletes the data pointer if it was dynamically allocated
+    --_size;
+
     return retVal;
 }
 
@@ -189,6 +190,15 @@ Object* DoublyLinkedList::Get(size_t position) const {
         tmp = tmp -> next;
     }
     return tmp -> data;
+}
+
+
+/**
+ * Returns the number of elements in the list.
+ * @return the size of the list
+ */
+size_t DoublyLinkedList::GetSize() const {
+    return _size;
 }
 
 

@@ -76,7 +76,7 @@ string Schedule::ToString() const {
  * Clears the doubly-linked list of TimeIntervals for a given day
  **/
 void Schedule::Clear(int day) {
-    if (day < 7) {
+    if ((day < 7) && (_week[day] != nullptr)) {
         _week[day]->Clear();
     }
 }
@@ -113,7 +113,7 @@ void Schedule::BuildScheduleFromInput() {
                 interval->SetEndTime(endTime);
 
                 // Insert this time interval into the doubly linked list for the day
-                _week[i]->Insert(interval, _week[i]->Size());
+                _week[i]->Insert(interval, _week[i]->GetSize());
 
                 cout << "Does this person work again on " << day << "? (y/n): ";
                 cin >> works;

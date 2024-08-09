@@ -29,10 +29,11 @@ protected:
 public:
     DoublyLinkedList();
     DoublyLinkedList(const DoublyLinkedList& other);
-    virtual ~DoublyLinkedList();
+    ~DoublyLinkedList() override;
     bool Insert(Object* element, size_t position) override;
     TimeInterval* Remove(size_t position) override;
     Object* Get(size_t position)const override;
+    size_t GetSize() const;
     string ToString()const override;
     void Clear() override;
 };

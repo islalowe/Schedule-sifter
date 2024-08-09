@@ -37,7 +37,7 @@ Person::Person(const string& personName) {
  * @param personName: a string value that will be set as the _name data member of the Person object.
  * @param personSchedule: a schedule object that will be set as the _schedule data member of the Person.
  */
-Person::Person(const string& personName, Schedule& personSchedule) {
+Person::Person(const string& personName, const Schedule& personSchedule) {
     _name = personName;
     _schedule = personSchedule;
 }
@@ -84,7 +84,7 @@ void Person::SetSchedule(Schedule& schedule) {
 /**
  * Getter to return the schedule of a person.
  */
-Schedule Person::GetSchedule(Person& person) {
+const Schedule& Person::GetSchedule() const {
     return _schedule;
 }
 

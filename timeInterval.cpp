@@ -41,7 +41,7 @@ TimeInterval::~TimeInterval() {
  **/
 string TimeInterval::ToString()const {
     stringstream ssTime;
-    ssTime << "Time Interval Start: " << _startTime << ", Time Interval End" << _endTime << std::endl;
+    ssTime << "Start: " << _startTime << " - End: " << _endTime;
     return ssTime.str();
 }
 
@@ -49,7 +49,7 @@ string TimeInterval::ToString()const {
 /**
  * Getter method for the startTime data member
  **/
-int TimeInterval::GetStartTIme() const {
+int TimeInterval::GetStartTime() const {
     return _startTime;
 }
 
@@ -57,7 +57,7 @@ int TimeInterval::GetStartTIme() const {
 /**
  * Getter method for the endTime data member
  **/
-int TimeInterval::GetEndTIme() const {
+int TimeInterval::GetEndTime() const {
     return _endTime;
 }
 
