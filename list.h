@@ -16,10 +16,11 @@ class List : public Object{
 protected:			// Protected to be able to increase size on insert
     size_t _size;
 public:
+    enum DayOfWeek { Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday };
     List();
     virtual ~List();
     // Pure Virtual methods to be implemented on concrete classes
-    virtual bool Insert(Object* element, size_t position) = 0;
+    virtual bool Insert(Object* element, size_t position, DayOfWeek day) = 0;
     virtual Object* Remove(size_t position) = 0;
     virtual Object* Get(size_t position)const = 0;
     virtual string ToString()const = 0;

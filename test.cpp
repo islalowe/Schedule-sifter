@@ -9,24 +9,23 @@
 #include <iostream>
 #include "person.h"
 #include "TimeInterval.h"
+#include <cassert>
 using std::cout;
 using std::endl;
 
-Schedule ScheduleMaker(Person& person, const int scheduleData[21]);
+Schedule ScheduleMaker(Person& person);
 
 
 int UnitTests (int argc, char *argv[]) {
     cout << "Here are the unit tests:" << endl;
 
     // Making the friends
-    const int georgeScheduleData[21] = {0, 0, 0, 1, 9, 17, 2, 9, 17, 3, 9, 17, 4, 9, 17, 5, 9, 17, 6, 0, 0};
     Person George("George");
-    Schedule georgeSchedule = ScheduleMaker(George, georgeScheduleData);
+    Schedule georgeSchedule = ScheduleMaker();
     George.SetSchedule(georgeSchedule);
 
-    const int sallyScheduleData[21] = {0, 0, 0, 1, 9, 17, 2, 17, 22, 3, 9, 17, 4, 17, 22, 5, 9, 17, 6, 0, 0};
     Person Sally("Sally");
-    Schedule sallySchedule = ScheduleMaker(Sally, sallyScheduleData);
+    Schedule sallySchedule = ScheduleMaker();
     Sally.SetSchedule(sallySchedule);
 
     // Test: Output George's schedule
@@ -42,23 +41,31 @@ int UnitTests (int argc, char *argv[]) {
 
 /**
  * Creates and returns a schedule for a given Person
+ * This does not use "BuildScheduleFromInput" because the testing file will not be used by user
+ * This method only exists for building schedules for the Person objects used in testing
  * @param person: the Person object whose Schedule will be returned.
+ * @param daySchedule: the list of shifts
  **/
-Schedule ScheduleMaker(Person& person, const int scheduleData[21]) {
+Schedule ScheduleMaker(Person& person, DoublyLinkedList monSchedule, DoublyLinkedList tuesSchedule,
+                       DoublyLinkedList wedSchedule, DoublyLinkedList thursSchedule,
+                       DoublyLinkedList friSchedule, DoublyLinkedList satSchedule, DoublyLinkedList sunSchedule) {
     Schedule returnSchedule;
 
+    const List::DayOfWeek days[7] = {List::DayOfWeek::Monday, List::DayOfWeek::Tuesday,
+                                     List::DayOfWeek::Wednesday, List::DayOfWeek::Thursday,
+                                     List::DayOfWeek::Friday, List::DayOfWeek::Saturday, List::DayOfWeek::Sunday};
+
     for (int i = 0; i < 7; ++i) {
-        if (scheduleData[i * 3 + 1] != 0 || scheduleData[i * 3 + 2] != 0) {
-            TimeInterval workInterval;
-            // access the start/end time for each day, which is 3 indexes apart
-            workInterval.SetStartTime(scheduleData[i * 3 + 1]);
-            workInterval.SetEndTime(scheduleData[i * 3 + 2]);
-            returnSchedule.Get(i)->Insert(&workInterval, scheduleData[i * 3]);
-        }
+        TimeInterval* workInterval = new TimeInterval(); // Allocate on heap
+        workInterval->SetStartTime(shiftStart);
+        workInterval->SetEndTime(shiftEnd);
+        returnSchedule.Get(i)->Insert(workInterval, pos, day);
     }
     person.SetSchedule(returnSchedule);
     return returnSchedule;
 }
+
+
 
 // Comment this main function out to run the interactive code in Main.cpp straight from the IDE
 int main(int argc, char *argv[]) {

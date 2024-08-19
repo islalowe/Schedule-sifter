@@ -5,6 +5,7 @@
 #define SCHEDULE_SIFTER_SCHEDULE_H
 
 #include "object.h"
+#include "list.h"
 #include "doublyLinkedList.h"
 #include <sstream>
 using std::stringstream;

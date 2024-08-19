@@ -27,7 +27,7 @@ DoublyLinkedList::DoublyLinkedList(const DoublyLinkedList &other) {
     _tail = nullptr;
     _size = 0;
     for (Node* tmp = other._head; tmp != nullptr; tmp = tmp->next) {
-        Insert(dynamic_cast<TimeInterval*>(tmp->data->Clone()), _size);
+        Insert(dynamic_cast<TimeInterval*>(tmp->data->Clone()), _size, tmp->day);
     }
 }
 
@@ -49,7 +49,7 @@ DoublyLinkedList &DoublyLinkedList::operator=(const DoublyLinkedList &rhs) {
     Clear();
     // Deep copy new resources
     for (Node* tmp = rhs._head; tmp != nullptr; tmp = tmp->next) {
-        Insert(tmp->data->Clone(), _size);
+        Insert(tmp->data->Clone(), _size, tmp->day);
     }
 
     return *this;
@@ -90,13 +90,14 @@ DoublyLinkedList::~DoublyLinkedList() {
  * @return true if it was possible to insert, false otherwise. It will not be able
  * to insert if the position is invalid.
  */
-bool DoublyLinkedList::Insert(Object* busyTimeInterval, size_t position){
+bool DoublyLinkedList::Insert(Object* busyTimeInterval, size_t position, List::DayOfWeek day){
     if (position > _size) {     // Check for position validity
         return false;
     }
 
     Node* neo = new Node;
     neo->data = busyTimeInterval;
+    neo->day = day;                     //day of the week enum
     neo->next = nullptr;
     neo->previous = nullptr;
 

@@ -16,7 +16,6 @@
  * If not explicitly initialized, the pointers in _week may be garbage values and
  * not be nullptr initially, leading to potential issues.
  **/
-
  Schedule::Schedule() : _week() {
      for (int i = 0; i < 7; ++i) {
          _week[i] = new DoublyLinkedList(); // Initialize each day with an empty DoublyLinkedList
@@ -86,40 +85,40 @@ void Schedule::Clear(int day) {
  * Builds a schedule based on user input.
  */
 void Schedule::BuildScheduleFromInput() {
-    const string days[7] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
-    string day;
+    const List::DayOfWeek days[7] = {List::DayOfWeek::Monday, List::DayOfWeek::Tuesday,
+                                     List::DayOfWeek::Wednesday, List::DayOfWeek::Thursday,
+                                     List::DayOfWeek::Friday, List::DayOfWeek::Saturday, List::DayOfWeek::Sunday};
+
     for (size_t i = 0; i < 7; i++) {
-        day = days[i];
+        List::DayOfWeek day = days[i];
         char works;
-        cout << "Does this person work on " << day << "? (y/n): ";
+        cout << "Does this person work on " << days[i] << "? (y/n): ";
         cin >> works;
-        int startTime, endTime;
 
         if (works == 'y' || works == 'Y') {
-            // Make a new list for the day if there are no shifts on that day already
+            int startTime, endTime;
+
             if (_week[i] == nullptr) {
-                DoublyLinkedList* newDaySchedule = new DoublyLinkedList();
-                _week[i] = newDaySchedule;
+                _week[i] = new DoublyLinkedList();
             }
 
             while (works == 'y' || works == 'Y') {
                 TimeInterval* interval = new TimeInterval();
-
-                cout << "What time do they start work on " << day << "? (24hr format: HHMM): ";
+                cout << "What time do they start work? (24hr format: HHMM): ";
                 cin >> startTime;
-                cout << "What time do they end work on " << day << "? (24hr format: HHMM): ";
+                cout << "What time do they end work? (24hr format: HHMM): ";
                 cin >> endTime;
+
                 interval->SetStartTime(startTime);
                 interval->SetEndTime(endTime);
 
-                // Insert this time interval into the doubly linked list for the day
-                _week[i]->Insert(interval, _week[i]->GetSize());
+                _week[i]->Insert(interval, _week[i]->GetSize(), day);
 
-                cout << "Does this person work again on " << day << "? (y/n): ";
+                cout << "Does this person work again on " << days[i] << "? (y/n): ";
                 cin >> works;
-
             }
         }
     }
 }
+
 
