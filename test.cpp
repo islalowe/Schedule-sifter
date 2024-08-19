@@ -44,11 +44,10 @@ int UnitTests (int argc, char *argv[]) {
  * This does not use "BuildScheduleFromInput" because the testing file will not be used by user
  * This method only exists for building schedules for the Person objects used in testing
  * @param person: the Person object whose Schedule will be returned.
- * @param daySchedule: the list of shifts
  **/
-Schedule ScheduleMaker(Person& person, DoublyLinkedList monSchedule, DoublyLinkedList tuesSchedule,
-                       DoublyLinkedList wedSchedule, DoublyLinkedList thursSchedule,
-                       DoublyLinkedList friSchedule, DoublyLinkedList satSchedule, DoublyLinkedList sunSchedule) {
+Schedule ScheduleMaker(Person& person,  DoublyLinkedList sunSchedule, DoublyLinkedList monSchedule,
+                       DoublyLinkedList tuesSchedule, DoublyLinkedList wedSchedule,
+                       DoublyLinkedList thursSchedule, DoublyLinkedList friSchedule, DoublyLinkedList satSchedule) {
     Schedule returnSchedule;
 
     const List::DayOfWeek days[7] = {List::DayOfWeek::Monday, List::DayOfWeek::Tuesday,
@@ -56,10 +55,10 @@ Schedule ScheduleMaker(Person& person, DoublyLinkedList monSchedule, DoublyLinke
                                      List::DayOfWeek::Friday, List::DayOfWeek::Saturday, List::DayOfWeek::Sunday};
 
     for (int i = 0; i < 7; ++i) {
-        TimeInterval* workInterval = new TimeInterval(); // Allocate on heap
-        workInterval->SetStartTime(shiftStart);
-        workInterval->SetEndTime(shiftEnd);
-        returnSchedule.Get(i)->Insert(workInterval, pos, day);
+        TimeInterval* workInterval = new TimeInterval();  // Allocate on heap
+        workInterval->SetStartTime(days[i]->_startTime);
+        workInterval->SetEndTime(days[i]->_endTime);
+        returnSchedule.Get(i)->Insert(workInterval, 0, days[i]);
     }
     person.SetSchedule(returnSchedule);
     return returnSchedule;
